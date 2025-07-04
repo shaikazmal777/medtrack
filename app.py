@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 import os
 from functools import wraps
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.secret_key = '0e96b1c7cc372a6d783645ca0ee43d65834e21614b6cbc92c4f87152bc9ac109'
 
 # AWS Configuration
@@ -403,5 +403,5 @@ def logout():
     flash('Logged out successfully', 'success')
     return redirect(url_for('index'))
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
